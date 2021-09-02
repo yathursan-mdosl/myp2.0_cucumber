@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>Myp2.0</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+<dependencies>
+    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
+    <!-- This will indicate maven to integrate Cucumber-Core API and with Java, Junit, gharkins and other resources.-->
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-core</artifactId>
+        <version>6.11.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-html -->
+    <!--        This will indicate maven to consolidate the results and publish the report in either Html or Json format-->
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-html</artifactId>
+        <version>0.2.7</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/net.sourceforge.cobertura/cobertura -->
+    <!--used to calculates test coverage for a codebase – the percentage of
+        branches/lines accessed by unit tests in a Java project.-->
+    <dependency>
+        <groupId>net.sourceforge.cobertura</groupId>
+        <artifactId>cobertura</artifactId>
+        <version>2.1.1</version>
+        <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+    <!--This will indicate Maven, which Cucumber files are to be downloaded
+    from the central repository to the local repository-->
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-java</artifactId>
+        <version>6.11.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+    <!--This will indicate Maven, which Cucumber JUnit files are to be downloaded
+    from the central repository to the local repository-->
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-junit</artifactId>
+        <version>6.11.0</version>
+        <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm-deps -->
+    <!--prevent conflicts when Cucumber-JVM is used along with other project depending on the same libraries-->
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-jvm-deps</artifactId>
+        <version>1.0.6</version>
+        <scope>provided</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
+    <!-- using cucumber-reporting to publish pretty html reports for Cucumber-->
+    <dependency>
+        <groupId>net.masterthought</groupId>
+        <artifactId>cucumber-reporting</artifactId>
+        <version>5.5.4</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core -->
+    <!--This includes the a foundation set of matcher implementations for common operations-->
+    <dependency>
+        <groupId>org.hamcrest</groupId>
+        <artifactId>hamcrest-core</artifactId>
+        <version>2.2</version>
+        <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/io.cucumber/gherkin -->
+    <!-- Gharkin is used to write the test cases in business readable format
+     og given.. when .. then.. this dependency is used to map feature file steps with test definitions-->
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>gherkin</artifactId>
+        <version>5.1.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+    <!--This will indicate Maven which Selenium jar files are to be downloaded
+            from the central repository to the local repository-->
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>3.141.59</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/junit/junit -->
+    <!--This will indicate Maven, which JUnit files are to be downloaded
+     from the central repository to the local repository-->
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.13.2</version>
+        <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+    <!--helps to download binanries/executables in an automated way and supports many browsers-->
+    <dependency>
+        <groupId>io.github.bonigarcia</groupId>
+        <artifactId>webdrivermanager</artifactId>
+        <version>4.4.3</version>
+    </dependency>
+</dependencies>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.22.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>net.masterthought</groupId>
+                    <artifactId>maven-cucumber-reporting</artifactId>
+                    <version>2.8.0</version>
+                    <executions>
+                        <execution>
+                            <id>execution</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>generate</goal>
+                            </goals>
+                            <configuration>
+                                <projectName>Myp2.0</projectName>
+                                <outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
+                                <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </build>
+</project>

@@ -1,0 +1,72 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-09-02T05:11:30.551Z",
+        "line": 2,
+        "name": "This is login scenario in myp2",
+        "description": "",
+        "id": "myp2-login;this-is-login-scenario-in-myp2",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 17642000000,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "user is on login page",
+            "match": {
+              "location": "stepDefinitions.Myp2LoginStep.user_is_on_login_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 333000000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "the user enter valid username and password",
+            "match": {
+              "location": "stepDefinitions.Myp2LoginStep.the_user_enter_valid_username_and_password()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 114000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "clicks on login button",
+            "match": {
+              "location": "stepDefinitions.Myp2LoginStep.clicks_on_login_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6805000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "the user should navigated to home page",
+            "match": {
+              "location": "stepDefinitions.Myp2LoginStep.the_user_should_navigated_to_home_page()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "myp2 login",
+    "description": "",
+    "id": "myp2-login",
+    "keyword": "Feature",
+    "uri": "file:Features/myp2Login.feature",
+    "tags": []
+  }
+]
